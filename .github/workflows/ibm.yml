@@ -23,7 +23,7 @@ jobs:
         ibmcloud login <<EOF
         995520407@qq.com
         Wei123456
-        #7
+        7
         no
         EOF
     - name: Do My Jobs
