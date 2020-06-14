@@ -21,7 +21,7 @@ jobs:
     - name: Login IBM Cloud
       run: |
         ibmcloud login <<EOF
-        995520407@qq.com 
+        995520407@qq.com
         Wei123456
         #7
         no
