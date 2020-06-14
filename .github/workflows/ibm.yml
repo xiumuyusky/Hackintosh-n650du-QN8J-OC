@@ -1,0 +1,34 @@
+name: IBM Cloud Auto Restart
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  schedule:
+    - cron: '0 12 * * FRI'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Download And Install
+      run: curl -sL https://ibm.biz/idt-installer | bash
+      
+    - name: Login IBM Cloud
+      run: |
+        ibmcloud login <<EOF
+        995520407@qq.com 
+        Wei123456
+        #7
+        no
+        EOF
+    - name: Do My Jobs
+      run: |
+        ibmcloud target -g a1f29899c31e4b99813b62abadbb20bb
+        ibmcloud target --cf
+        ibmcloud cf install
+        ibmcloud cf restart krito
