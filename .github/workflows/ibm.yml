@@ -28,7 +28,7 @@ jobs:
         EOF
     - name: Do My Jobs
       run: |
-        ibmcloud target -g a1f29899c31e4b99813b62abadbb20bb
+        ibmcloud target -g Default
         ibmcloud target --cf
         ibmcloud cf install
         ibmcloud cf restart krito
